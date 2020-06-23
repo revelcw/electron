@@ -61,25 +61,25 @@
 }
 
 - (void)isSuspending:(NSNotification*)notify {
-  for (auto*& emitter : self->emitters) {
+  for (auto* emitter : self->emitters) {
     emitter->Emit("suspend");
   }
 }
 
 - (void)isResuming:(NSNotification*)notify {
-  for (auto*& emitter : self->emitters) {
+  for (auto* emitter : self->emitters) {
     emitter->Emit("resume");
   }
 }
 
 - (void)onScreenLocked:(NSNotification*)notification {
-  for (auto*& emitter : self->emitters) {
+  for (auto* emitter : self->emitters) {
     emitter->Emit("lock-screen");
   }
 }
 
 - (void)onScreenUnlocked:(NSNotification*)notification {
-  for (auto*& emitter : self->emitters) {
+  for (auto* emitter : self->emitters) {
     emitter->Emit("unlock-screen");
   }
 }
